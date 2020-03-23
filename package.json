@@ -1,6 +1,6 @@
 {
   "name": "agg-code-upload",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Denis Bezrukov @anthrax63",
   "bin": {
     "agg-code-upload": "./bin/run"
@@ -45,7 +45,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/anthrax63/cli",
+  "homepage": "https://github.com/aggregion/agg-code-upload",
   "keywords": [
     "aggregion"
   ],
