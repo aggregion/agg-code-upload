@@ -1,6 +1,6 @@
 {
   "name": "agg-code-upload",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Denis Bezrukov @anthrax63",
   "bin": {
     "agg-code-upload": "./bin/run"
