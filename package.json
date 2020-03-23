@@ -47,7 +47,7 @@
   ],
   "homepage": "https://github.com/anthrax63/cli",
   "keywords": [
-    "oclif"
+    "aggregion"
   ],
   "license": "MIT",
   "main": "lib/index.js",
