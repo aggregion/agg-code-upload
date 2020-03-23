@@ -1,0 +1,70 @@
+{
+  "name": "agg-code-upload",
+  "version": "0.0.0",
+  "author": "Denis Bezrukov @anthrax63",
+  "bin": {
+    "agg-code-upload": "./bin/run"
+  },
+  "bugs": "https://github.com/anthrax63/cli/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.19",
+    "@oclif/config": "^1.14.0",
+    "@oclif/plugin-help": "^2.2.3",
+    "inquirer": "^7.1.0",
+    "mkdirp": "^1.0.3",
+    "ora": "^4.0.3",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "tslib": "^1.11.1"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^6.5.0",
+    "@types/mkdirp": "^1.0.0",
+    "@types/request-promise": "^4.1.46",
+    "@oclif/dev-cli": "^1.22.2",
+    "@oclif/test": "^1.2.5",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^10.17.17",
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-oclif": "^3.1.0",
+    "eslint-config-oclif-typescript": "^0.1.0",
+    "globby": "^10.0.2",
+    "mocha": "^5.2.0",
+    "nyc": "^14.1.1",
+    "ts-node": "^8.8.1",
+    "typescript": "^3.8.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/anthrax63/cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "pearson-code-upload",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "anthrax63/cli",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
