@@ -1,11 +1,11 @@
 {
   "name": "agg-code-upload",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Denis Bezrukov @anthrax63",
   "bin": {
     "agg-code-upload": "./bin/run"
   },
-  "bugs": "https://github.com/anthrax63/cli/issues",
+  "bugs": "https://github.com/aggregion/agg-code-upload/issues",
   "dependencies": {
     "@oclif/command": "^1.5.19",
     "@oclif/config": "^1.14.0",
@@ -58,7 +58,7 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "anthrax63/cli",
+  "repository": "aggregion/agg-code-upload",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",

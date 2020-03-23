@@ -21,13 +21,11 @@ export default class LoginCommand extends Command {
         type: 'input',
         name: 'login',
         message: 'Enter your Aggregion login',
-        default: 'denis.bezrukov@e-azbuka.ru',
       },
       {
         type: 'password',
         name: 'password',
         message: 'Password',
-        default: 'yfibk.cfvkexi',
       },
     ]);
 
