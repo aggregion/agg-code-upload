@@ -32,9 +32,9 @@ export default class LoginCommand extends Command {
     const api = new Api();
 
     const spinner = ora('Loading...').start();
-    const loginResult = await api.login(data.login, data.password);
+    const loginResult = await api.Id.login(data.login, data.password);
     await api.saveCredentials(loginResult);
-    const accounts = await api.getAccounts();
+    const accounts = await api.Id.getAccounts();
     spinner.stop();
 
     const accountData = await inquirer.prompt<AccountData>([
