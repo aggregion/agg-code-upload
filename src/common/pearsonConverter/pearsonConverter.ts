@@ -25,7 +25,7 @@ export default class PearsonConverter {
       }
     }
 
-    if (fs.existsSync(path.join(contentPath, './install.exe'))) {
+    if (fs.existsSync(path.join(contentPath, './data/xml/bookinfo.xml'))) {
       return ContentType.NEA;
     }
     if (fs.existsSync(path.join(contentPath, './data/main.swf'))) {
@@ -55,16 +55,16 @@ export default class PearsonConverter {
   }
 
   private static convertDE(dir: string, isProtected: boolean): Promise<void> {
-    const filesToCopyPath = path.join(__dirname, './dataDE/');
+    const filesToCopyPath = path.join(__dirname, './data/dataDE/');
     fs.copySync(filesToCopyPath, dir);
     if (isProtected) {
-      fs.copySync(path.join(__dirname, './dataDEProtected/'), dir);
+      fs.copySync(path.join(__dirname, './data/dataDEProtected/'), dir);
     }
     return Promise.resolve();
   }
 
   private static convertNEA(dir: string): Promise<void> {
-    const filesToCopyPath = path.join(__dirname, './dataNEA/');
+    const filesToCopyPath = path.join(__dirname, './data/dataNEA/');
     fs.copySync(filesToCopyPath, dir);
     return Promise.resolve();
   }
@@ -77,9 +77,9 @@ export default class PearsonConverter {
       const fileName = path.basename(file);
       return !fileName.toLowerCase().endsWith('.swf');
     };
-    const filesToCopyPath = path.join(__dirname, './data/toCopy/');
+    const filesToCopyPath = path.join(__dirname, './data/dataAT/toCopy/');
     fs.copySync(filesToCopyPath, dir);
-    const template = handlebars.compile(fs.readFileSync(path.join(__dirname, './data/content.hbs'), 'utf8'));
+    const template = handlebars.compile(fs.readFileSync(path.join(__dirname, './data/dataAT/content.hbs'), 'utf8'));
     return new Promise((resolve, reject) => {
       readdir(dir, [ignoreFunc], (err, files) => {
         if (err) {
