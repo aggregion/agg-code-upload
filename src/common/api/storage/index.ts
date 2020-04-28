@@ -11,6 +11,7 @@ export interface File {
   name: string;
   type: string;
   size: number;
+  resourceId: string;
   sharing: {
     byLink: boolean;
   };

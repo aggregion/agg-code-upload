@@ -1,6 +1,6 @@
 {
   "name": "@aggregion/agg-cli",
-  "version": "1.0.4",
+  "version": "1.1.1",
   "author": "Denis Bezrukov @anthrax63",
   "bin": {
     "agg": "./bin/run"
@@ -86,9 +86,9 @@
   },
   "repository": "aggregion/agg-code-upload",
   "scripts": {
-    "postpack": "rm -f oclif.manifest.json && cpy common/pearsonConverter/data/**/* ../lib --cwd=src --parents",
+    "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme && cpy common/pearsonConverter/data/**/* ../lib --cwd=src --parents",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   },
