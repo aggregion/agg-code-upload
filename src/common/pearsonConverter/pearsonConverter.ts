@@ -87,7 +87,7 @@ export default class PearsonConverter {
         }
         try {
           files.forEach(f => {
-            const pathToRoot = path.relative(f, dir);
+            const pathToRoot = path.relative(f, dir).replace('../', '');
             const innerSwf = path.basename(f);
             const swfHtml = innerSwf + '.html';
             const swfHtmlPath = path.join(path.dirname(f), swfHtml);
